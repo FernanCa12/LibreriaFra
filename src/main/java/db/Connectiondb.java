@@ -7,14 +7,7 @@ public class Connectiondb {
     private static String user = "postgres";
     private static String pass = "1234.";
 
-    private static Connection conn;
-
-    public static Connection conectar(){
-        try {
-            conn = DriverManager.getConnection(url,user,pass);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return conn;
+    public static Connection conectar() throws SQLException{
+        return DriverManager.getConnection(url,user,pass);
     }
 }
